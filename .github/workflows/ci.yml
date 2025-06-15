@@ -1,8 +1,14 @@
 # .github/workflows/ci.yml
 name: Use Org Node CI
 
-on: [push, pull_request]
-
+on:
+  workflow_dispatch:     # ✅ Enables manual trigger from UI
+  push:                  # ✅ Triggers on push to branches
+    branches:
+      - main
+  pull_request:          # ✅ Triggers on PR events
+    branches:
+      - main
 jobs:
   use-template:
     uses: Purushotham-Organization-1/.github/.github/workflows/node-ci.yml@main
