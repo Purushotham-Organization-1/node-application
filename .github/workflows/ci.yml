@@ -1,1 +1,10 @@
+# .github/workflows/ci.yml
+name: Use Org Node CI
 
+on: [push, pull_request]
+
+jobs:
+  use-template:
+    uses: your-org/.github/.github/workflow-templates/node-ci.yml@main
+    with:
+      node-version: '18'
